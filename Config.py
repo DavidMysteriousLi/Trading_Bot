@@ -11,7 +11,6 @@ class Long_pull_strategy:
         self.satisfied_tickers = []
         self.MA_RSI = ()
         self.portfolio = self.api.list_positions()
-        # self.buy_qty = self.api.get_account()
         
     def generate_satisfied_tickers(self):
         for ticker in self.symbols:
@@ -19,7 +18,7 @@ class Long_pull_strategy:
             self.MA_RSI += calc_MA_RSI(ticker)
             ma_value = self.MA_RSI[0]
             rsi_value = self.MA_RSI[1]
-            if (latest_trade_price > ma_value and rsi_value < 40):
+            if (latest_trade_price > ma_value and rsi_value < 35):
                 self.satisfied_tickers.append(ticker)
             self.MA_RSI = ()
         return
@@ -54,7 +53,7 @@ class Long_pull_strategy:
         for position in self.portfolio:
             self.MA_RSI += calc_MA_RSI(position.symbol)
             rsi_value = self.MA_RSI[1]
-            if (rsi_value < 45):
+            if (rsi_value > 45):
                 print(f'Filling sell order of ' + position.symbol + ' at '\
                     '$ ' + position.current_price + ' for ' +  position.qty + ' shares')
                 self.api.submit_order(
@@ -65,4 +64,5 @@ class Long_pull_strategy:
                     time_in_force= "day")
                 print(f'sell order of ' + position.symbol + ' is filled')
             self.MA_RSI = ()
+        return
 
