@@ -9,7 +9,7 @@ def main():
         nasdaq_100_tickers.append(stocks["symbol"])
     
     nasdaq_100_tickers.remove("CTRP")
-    first_10 = nasdaq_100_tickers[20:35]
+    first_10 = nasdaq_100_tickers[0:9]
     long_strategy = Long_pull_strategy(first_10)
     long_strategy.create_sell_order()
     # long_strategy.generate_satisfied_tickers()
