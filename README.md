@@ -6,6 +6,8 @@ The Rules of the strategy are:
 
 * The stock price must be above the 200-day Moving Average
 * Entry point: 
-    10-period RSI below 30
+    - 10-period RSI below 30
 * Exit point:
-    10-period RSI above 40, or after 10 trading days
+    - 10-period RSI above 40, or after 10 trading days
+
+My algorithm 
