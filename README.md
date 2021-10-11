@@ -10,4 +10,4 @@ The Rules of the strategy are:
 * Exit point:
     - 10-period RSI above 40 or after 10 trading days
 
-The algorithm executes trades on paper money by using alpaca's RESTful API. My algorithm datamines values from yahoo finance using pandas data reader to calculae moving average and RSI values.
+My algorithm datamines values from yahoo finance using pandas data reader to calculae moving average and RSI values. Then depending on those values, it executes trades on paper money by using alpaca's RESTful API
