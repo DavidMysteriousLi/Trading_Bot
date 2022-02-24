@@ -1,6 +1,6 @@
-# Trading Bot! #
+# Trading Bot! 
 
-1) Top gainer strategy: 
+ ## 1) Top gainer strategy: 
 
 * Market condition:
     - Start running the algorithm when the market opens (When trading volume is typically the highest)
