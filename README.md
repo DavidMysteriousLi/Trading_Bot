@@ -1,13 +1,11 @@
 # Trading Bot! 
 
-This is an algorithm that implements the "pullback trading strategy" by Larry Connors. 
+# Top gainer strategy: 
 
-The Rules of the strategy are:
+* Market condition:
+    - Start running the algorithm when the market opens (When trading volume is typically the highest)
+    - The algorithm typically runs for 1 - 2 hours.
 
-* Entry point: 
-    - The stock price must be above the 200-day Moving Average
-    - 10-period RSI(Relative strength index) below 30
-* Exit point:
-    - 10-period RSI above 40 or after 10 trading days
-
-My algorithm datamines values from yahoo finance using pandas data reader to calculae moving average and RSI values. Then depending on those values, it executes trades on paper money by using alpaca's RESTful API
+* The steps of the strategy are as follows :
+    - When a stock's gain percentage exceeds +1.5% place a buy order on the stock
+    - After that, place a trailing stop loss on the stock at trail percent = 2
